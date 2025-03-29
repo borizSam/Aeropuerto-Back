@@ -3,7 +3,7 @@ name: 🚀 CI/CD Backend Docker
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   docker-backend:
