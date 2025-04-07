@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:5173") // React
 @RestController
 @RequestMapping("/api/vuelos")
 public class VueloController {
