@@ -15,6 +15,7 @@ public class WebConfig implements WebMvcConfigurer {
                         //"https://master.dvuaci1jgit3l.amplifyapp.com"
                 )
                 .allowedMethods("*")
-                .allowedHeaders("*");
+                .allowedHeaders("*")
+                .allowedOrigins("*"); //Tests-Quitar cuando este en PROD
     }
 }
