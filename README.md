@@ -1,25 +1,27 @@
 ![Aeropuerto Backend Banner](https://i.imgur.com/l4ktSLG.png)
-# 🧱 Aeropuerto Backend – API REST con Spring Boot
 
-> ✈️ API REST para la gestión integral de un sistema de Aeropuerto. 
+# Aeropuerto Backend – API REST con Spring Boot
+
+> ✈️ API REST para la gestión integral de un sistema de **Aeropuerto**.  
 Permite administrar vuelos, pasajeros, aerolíneas y operaciones.  
 Forma parte del ecosistema **Aeropuerto System**, junto con el frontend y la infraestructura cloud (repos separados).
 
 ---
 
-## Tecnologías principales
+## 🚀 Tecnologías principales
 - ☕ **Java 21**
 - 🌱 **Spring Boot 3**
 - 🧩 **Spring Data JPA** + **MySQL**
 - 🔐 **Spring Security + JWT**
 - 🐳 **Docker**
 - ⚙️ **Maven**
-- 🚀 **GitHub Actions** (CI/CD)
+- 🚀 **GitHub Actions (CI/CD)**
 
 ---
 
-## Arquitectura del proyecto
+## 🧩 Arquitectura del proyecto
 
+```plaintext
 Aeropuerto-Backend/
 │
 ├── 📁 src/
@@ -44,7 +46,7 @@ Aeropuerto-Backend/
 ├── ⚙️ .gitattributes                     # Configuración de atributos Git
 └── 🔄 .github/workflows/ci.yml           # Pipeline CI/CD con GitHub Actions
 
----
+```
 
 ## ⚙️ Ejecución local
 
@@ -57,8 +59,8 @@ Aeropuerto-Backend/
 ./mvnw clean package
 java -jar target/aeropuerto-0.0.1-SNAPSHOT.jar
 ```
-Por defecto la aplicación se ejecuta en:
-👉 http://localhost:8080
+    Por defecto la aplicación se ejecuta en:
+##### http://localhost:8080
 
 ### 🐳 Docker
     Construir imagen
@@ -67,15 +69,35 @@ Por defecto la aplicación se ejecuta en:
 ### Ejecutar contenedor
     docker run -p 8080:8080 borizsam/aeropuerto-backend
 
-### 🔌 Endpoints principales
-    Método	Endpoint	Descripción
-    GET	/api/vuelos	Listar vuelos
-    POST	/api/vuelos	Crear vuelo
-    GET	/api/aerolineas	Listar aerolíneas
-    POST	/api/login	Autenticación JWT
-    GET	/api/health	Verificar estado del servicio
+## 🔌 Endpoints principales
 
-🔐 Los endpoints protegidos requieren un token JWT válido en el encabezado Authorization.
+| Método | Endpoint | Descripción |
+|:-------|:----------|:-------------|
+| `GET` | `/api/health` | Verificar estado del servicio |
+| `GET` | `/api/aeropuertos` | Listar todos los aeropuertos |
+| `POST` | `/api/aeropuertos` | Crear un nuevo aeropuerto |
+| `GET` | `/api/aviones` | Listar todos los aviones |
+| `POST` | `/api/aviones` | Registrar un nuevo avión |
+| `GET` | `/api/vuelos` | Listar vuelos disponibles |
+| `POST` | `/api/vuelos` | Crear un nuevo vuelo |
+| `POST` | `/api/login` | Autenticación JWT (inicio de sesión) |
+
+> 🔐 Los endpoints protegidos requieren un token **JWT** válido en el encabezado `Authorization`.
+
+---
+
+## 🌐 Frontend del proyecto
+
+Si deseas probar el sistema completo en local, puedes ejecutar también el **frontend React + Vite**, disponible en el repositorio:
+
+👉 [**Aeropuerto-Front**](https://github.com/borizSam/Aeropuerto-Front)
+
+Una vez clonado y configurado, asegúrate de crear un archivo `.env` en la raíz del frontend con la siguiente variable:
+
+```bash
+VITE_API_URL=http://localhost:8080/api
+```
+---
 
 ## 🔄 CI/CD
 
@@ -106,8 +128,13 @@ El despliegue se gestiona desde el repositorio:
 
     Monitoreo con CloudWatch
 
+### 🌐 Repositorios relacionados
+
+[🖥️ Frontend: Aeropuerto-Front](https://github.com/borizSam/Aeropuerto-Front.git)
+
+[☁️ Infraestructura: Aeropuerto-Infra](https://github.com/borizSam/Aeropuerto-infra.git)
+
 #### Licencia
-    Este proyecto está bajo la licencia MIT.
     Eres libre de usarlo y modificarlo con atribución.
 
 ###### Desarrollado por @borizSam
